@@ -31,6 +31,10 @@ app.get("/name", (req, res)=>{
   res.json({name: req.query.first+" "+req.query.last})
 })
 
+app.use("/name", (req, res)=>{
+  res.json({name: req.body.first+" "+ req.body.last})
+})
+
 app.get("/json",(req, res)=>{
   var responsetext = {"message":"Hello json"};
   if(process.env.MESSAGE_STYLE == "uppercase"){
